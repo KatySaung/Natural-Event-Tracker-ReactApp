@@ -1,29 +1,35 @@
 import { useState, useEffect } from "react"
 import Map from "./components/Map"
 
-
-
 function App( ) {
 
-// state to hold nasa data
-  const [Nasa, setNasa] = useState(null);
+// useState setter function to hold nasa data. 
+// useState setter function for loading
+  const [nasaData, setNasaData] = useState(null);
+  const [loading, setLoading] = useState(false)
 
-// Function to get nasa data
-   const getNasa = async ( ) => {
-        // fetch and store resp
-        const resp  = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events");
-        // Parse JSON resp into JS object
-        const data = await resp.json( );
-        // set Nasa state to Nasa
-        setNasa(data);
-    }
+// callback function,useEffect to get data from Nasa API in function fetchData
+useEffect(( ) => {
+  const fetchData = async ( ) => { 
+    const resp = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events")
+    const newData= await resp.json( );
+    const { events } = newData
+
+// need to put useState outside of useEffect, prevent infinite loop?
+setNasaData(newData)
+  }
+// line 25 console log prints x2 in Dev Tools. Why?
+  fetchData( )
+},  [ ])
+console.log(nasaData)
 
       return (
           <div>
-            <h1>Florida, Miami</h1>
-            <Map />
+            <h1>Natural Event Tracker - Nasa Data</h1>
+            <Map  nasaData={nasaData} />
+            
           </div>
         );
-  }
   
+  }
 export default App;
