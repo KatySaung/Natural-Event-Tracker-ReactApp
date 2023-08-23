@@ -1,13 +1,11 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif
 
 }
 
-.map-container {
-  width: 100vw;
+.map-marker {
+  width: 100%;
   height: 100vh;
   position: relative;
 
