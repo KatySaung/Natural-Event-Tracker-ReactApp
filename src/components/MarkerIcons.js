@@ -6,7 +6,6 @@ const MarkerIcons = ({ lat, lng, onClick }) => {
     <div className="marker-icon" onClick={onClick}>
     <Icon icon="mdi:fire-alert" style={{ color: "red" }}/>
     <Icon icon="mdi:weather-hurricane" style={{ outlineColor: "red", color: "white" }} />
-    
     </div>
   )
 }
