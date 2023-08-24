@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 
 
-const MarkerIcons = ({ lat, lng, onClick }) => {
+const MapMarker = ({ lat, lng, onClick }) => {
   return (
     <div className="marker-icon" onClick={onClick}>
     <Icon icon="mdi:fire-alert" style={{ color: "red" }} className="fire-icon" onClick={onClick}/>
@@ -11,4 +11,4 @@ const MarkerIcons = ({ lat, lng, onClick }) => {
 }
 
 
-export default MarkerIcons
+export default MapMarker

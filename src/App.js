@@ -1,43 +1,48 @@
-import { useState, useEffect } from "react"
-import Map from "./components/Map"
+import { useState, useEffect } from "react";
+import Map from "./components/Map";
+import Form from "./components/Form";
+import DataDisplay from "./components/DataDisplay";
 
-function App( ) {
-  // useState setter function to hold nasa data. 
-  // useState setter function for loading
- // callback function,useEffect to get data from Nasa API in function fetchData
+export default function App( ) {
+ 
+ // set state to hold nasa data
   const [nasaData, setNasaData] = useState(null);
+
+  // Function to get nasa data
   useEffect(( ) => {
-    const fetchData = async ( ) => {
+    const getNasaData = async ( ) => {
     try {
-      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events?category=severeStorms,wildfires,volcanoes");
-      const Event  = await res.json( )
-      setNasaData(Event);
+      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events?&category=severeStorms,volcanoes");
+      const data  = await res.json( );
+      setNasaData(data);
 
     }catch (err) {
       console.error("error during fetch nasa data", err)
     }  
 }
-fetchData( )
+getNasaData( )
 },  [ ] )
 console.log(nasaData);
 
-
-  function fire( ) {
-    if (nasaData) {
-      nasaData.events.map(evt => {
-        if (evt.categories[0].id === "wildfires") {
-          console.log(evt.geometry[0].coordinates)
-        }
-      })
-    }
-  }
+// FUNCTION TO PLOT FIRE MARKERS ON MAP
+  // function fireMarkers( ) {
+  //   const fire = [{
+  //     "categories [0] : "wildfires",
+  //     "geometry [0] : "",
+  //     "lat": 0,
+  //     "lng":0 ,
+  //   }]
+  // }
+   
 
   return (
-    <div>
+    <div className="App">
       <h1>Natural Event Tracker - Nasa Data</h1>
+      <Form datasearch= {FormData} />
+      <DataDisplay nasaData={{nasaData}} />
       <Map  />
+      <Form />
     </div>
   );
 
 }
-export default App;
