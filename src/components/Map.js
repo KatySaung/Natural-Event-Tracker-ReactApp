@@ -12,9 +12,9 @@ return (
                         defaultZoom={zoom}
                 >
                   <MarkerIcons
-                            lat={59.955413}
-                            lng={30.337844}
-                            text="My Marker"
+                            lat={center.lat}
+                            lng={center.lng}
+                            
                           />
                 </GoogleMapReact>
       </div>
@@ -22,8 +22,8 @@ return (
 }
 Map.defaultProps = {
     center:{
-      lat: 19.8967662,
-      lng: -155.58278180000002,
+      lat: 59.955413,
+      lng: 30.337844,
     },
       zoom: 11
 

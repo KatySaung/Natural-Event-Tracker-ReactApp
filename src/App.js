@@ -4,25 +4,25 @@ import Map from "./components/Map"
 function App( ) {
   // useState setter function to hold nasa data. 
   // useState setter function for loading
+ // callback function,useEffect to get data from Nasa API in function fetchData
   const [nasaData, setNasaData] = useState(null);
-
-  // callback function,useEffect to get data from Nasa API in function fetchData
-  useEffect(() => {
+  useEffect(( ) => {
+    const fetchData = async ( ) => {
     try {
-      const fetchData = async () => {
-        const resp = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events?category=severeStorms,wildfires,volcanoes")
-        const newData = await resp.json();
-        const { Event }  = newData
-        setNasaData(newData)
-      }
-      // line 25 console log prints x2 in Dev Tools. Why?
-      fetchData()
-    } catch (error) {
-      console.error(error)
-    }
-  },  [ ])
+      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events?category=severeStorms,wildfires,volcanoes");
+      const Event  = await res.json( )
+      setNasaData(Event);
 
-  function fire() {
+    }catch (err) {
+      console.error("error during fetch nasa data", err)
+    }  
+}
+fetchData( )
+},  [ ] )
+console.log(nasaData);
+
+
+  function fire( ) {
     if (nasaData) {
       nasaData.events.map(evt => {
         if (evt.categories[0].id === "wildfires") {
@@ -31,15 +31,11 @@ function App( ) {
       })
     }
   }
-  // fire( )
-
 
   return (
     <div>
       <h1>Natural Event Tracker - Nasa Data</h1>
       <Map  />
-  
-    
     </div>
   );
 
