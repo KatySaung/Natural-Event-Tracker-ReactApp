@@ -1,4 +1,17 @@
 # Natural Event Tracker
 
-## Links[Netlify Link](https://64e7cdb97e9eab11aff51b9a--creative-queijadas-62ec75.netlify.app/)
+## Links
+[Netlify Link](https://naturaleventstracker-reactapp.netlify.app)
+[Github Link](https://github.com/KatySaung/Natural-Event-Tracker-ReactApp)
 
+## Installation
+
+
+## Technologies 
+Dependencies
+<ul>
+<li>iconify/icons-mdi": "^1.2.47</li>
+<li>react-google-maps/api": "^2.19.2</li>
+<ul>
+
+## unsolved problems
