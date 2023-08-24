@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Map from "./components/Map";
 import Form from "./components/Form";
 import DataDisplay from "./components/DataDisplay";
+import MarkerIcons from "./components/MarkerIcons";
 
 export default function App( ) {
  
@@ -12,7 +13,7 @@ export default function App( ) {
   useEffect(( ) => {
     const getNasaData = async ( ) => {
     try {
-      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events?&category=severeStorms,volcanoes");
+      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events?limit=5&category=wildfires,volcanoes");
       const data  = await res.json( );
       setNasaData(data);
 
@@ -24,17 +25,6 @@ getNasaData( )
 },  [ ] )
 console.log(nasaData);
 
-// FUNCTION TO PLOT FIRE MARKERS ON MAP IN APP or IN MAP??. Use ForEach to loop through objects in array?
-  // function fireMarkers( ) {
-  //   const fire = [{
-  //     "categories [0] : "wildfires",
-  //     "geometry [0] : "",
-  //     "lat": 0,
-  //     "lng":0 ,
-  //   }]
-  // }
-   
-
   return (
     <div className="App">
       <h1>Natural Event Tracker - Nasa Data</h1>
@@ -42,9 +32,10 @@ console.log(nasaData);
       <DataDisplay nasaData={{nasaData}} />
       <Map  
             center={{lat:59.955413, lng:30.337844}} 
-            zoom={11}
+            zoom={1}
             nasaData={nasaData} 
         />
+        <MarkerIcons />
       <Form />
     </div>
   );
