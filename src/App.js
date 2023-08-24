@@ -31,7 +31,7 @@ console.log(nasaData);
       <Form datasearch= {FormData} />
       <DataDisplay nasaData={{nasaData}} />
       <Map  
-            center={{lat:59.955413, lng:30.337844}} 
+            center={{lat:35.861700, lng:104.195400}} 
             zoom={1}
             nasaData={nasaData} 
         />
