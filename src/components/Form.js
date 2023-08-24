@@ -1,8 +1,9 @@
-import {useState,useEffect} from "react";
+import {useState, useEffect} from "react";
+
 
 export default function Form (props){
 
-    // hold form data. useEFFECT NOT USED??
+    // hold form data. NEED HELP: NOT SEEING SEARCH RESULTS ON MAP
 const [formData, setFormData] = useState({
     searchterm: "",
 });
@@ -18,7 +19,7 @@ const handleSubmit = (evt) => {
     evt.preventDefault( );
     props.datasearch(formData.searchterm);
 };
-
+// NEED HELP: EVENT DATE AND LOCATION INFO TOP AND BOTTOM of DOM
     return (
         <div className="location-info">
             <form on Submit={handleSubmit}>

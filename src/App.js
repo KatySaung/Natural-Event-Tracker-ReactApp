@@ -24,7 +24,7 @@ getNasaData( )
 },  [ ] )
 console.log(nasaData);
 
-// FUNCTION TO PLOT FIRE MARKERS ON MAP
+// FUNCTION TO PLOT FIRE MARKERS ON MAP IN APP or IN MAP??. Use ForEach to loop through objects in array?
   // function fireMarkers( ) {
   //   const fire = [{
   //     "categories [0] : "wildfires",
@@ -40,7 +40,11 @@ console.log(nasaData);
       <h1>Natural Event Tracker - Nasa Data</h1>
       <Form datasearch= {FormData} />
       <DataDisplay nasaData={{nasaData}} />
-      <Map  />
+      <Map  
+            center={{lat:59.955413, lng:30.337844}} 
+            zoom={11}
+            nasaData={nasaData} 
+        />
       <Form />
     </div>
   );
