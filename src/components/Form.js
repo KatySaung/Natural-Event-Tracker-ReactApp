@@ -30,7 +30,7 @@ const handleSubmit = (evt) => {
                     location="searchterm"
                     onChange={handleChange}
                    />
-                   <input type="submit" value="submit" />
+                   <input type="Search" value="Search" />
             </form>
             <h3>Event Date and Location Info</h3>
         </div>

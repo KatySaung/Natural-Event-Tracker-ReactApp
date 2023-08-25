@@ -12,14 +12,10 @@ const Map = ({ center, zoom, nasaData })=> {
        
      
             <MarkerIcons
-                // categories={evt.title}
-                // date={evt.geometry.date}
                 lat={evt.geometry[0].coordinates[0]}
                 lng={evt.geometry[0].coordinates[1]}
                 key={index}
             />
-
-  
       );   
 }) : ""
  console.log(Fire)
@@ -27,22 +23,19 @@ return (
       <div className="map-marker">
                   <GoogleMapReact
                         bootstrapURLKeys={{ key: process.env.REACT_APP_api_key}}
-                        defaultCenter={center}
-                        defaultZoom={zoom}
+                        defaultCenter={ center }
+                        defaultZoom={ zoom }
                 >
-                  {nasaData? 
-                            <MarkerIcons
-                            // categories={evt.title}
-                            // date={evt.geometry.date}
-                            lat={nasaData.events[0].geometry[0].coordinates[0]}
-                            lng={nasaData.events[0].geometry[0].coordinates[1]}
-                             />
-                        : ""
-                }
-  
-                  {/* {nasaData && Fire} */}
+                        {nasaData? 
+                              <MarkerIcons
+                              lat={nasaData.events[0].geometry[0].coordinates[0]}
+                              lng={nasaData.events[0].geometry[0].coordinates[1]}
+                              />
+                              : ""
+                        }
                 </GoogleMapReact>
       </div>
    )
 }
+
 export default  Map;

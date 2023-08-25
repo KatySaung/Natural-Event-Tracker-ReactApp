@@ -13,7 +13,7 @@ export default function App( ) {
   useEffect(( ) => {
     const getNasaData = async ( ) => {
     try {
-      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events?limit=5&category=wildfires,volcanoes");
+      const res = await fetch("https://eonet.gsfc.nasa.gov/api/v3/events?limit=5&category=wildfires");
       const data  = await res.json( );
       setNasaData(data);
 
@@ -31,12 +31,10 @@ console.log(nasaData);
       <Form datasearch= {FormData} />
       <DataDisplay nasaData={{nasaData}} />
       <Map  
-            center={{lat:35.861700, lng:104.195400}} 
-            zoom={1}
+            center={{lat: 47.54, lng: -117.7311}} 
+            zoom={6}
             nasaData={nasaData} 
         />
-        <MarkerIcons />
-      <Form />
     </div>
   );
 
