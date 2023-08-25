@@ -24,4 +24,4 @@ Dependencies
 <li>Create links to articles and news related to the event.</li>
 <li>Create trackers for real time natural event locations.</li>
 <li>Create a mobile application that provides live updates with alerts and emergency routes, safety and evacuation action plan, and emergency telephone numbers.</li>
-<ul>
+</ul>
