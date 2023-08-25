@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Map from "./components/Map";
 import Form from "./components/Form";
 import DataDisplay from "./components/DataDisplay";
-import MarkerIcons from "./components/MarkerIcons";
+import Nav from "./components/Nav"
 
 export default function App( ) {
  
@@ -31,10 +31,31 @@ console.log(nasaData);
       <Form datasearch= {FormData} />
       <DataDisplay nasaData={{nasaData}} />
       <Map  
-            center={{lat: 47.54, lng: -117.7311}} 
+            // Washington
+            // center={{lat: 47.54, lng: 
+            //   -117.7311 }} 
+
+            // Oregon
+            // center={{lat: 42.5158, lng: 
+            // -124.0372 }} 
+
+            // Arizona
+            // center={{lat: 34.551083, lng: 
+            // -111.466806 }} 
+
+            // Florida
+            // center={{lat: 29.229722, lng: 
+            //   -81.688889 }} 
+
+            // North Carolina
+            // center={{lat: 34.870158, lng: 
+            //   -77.05122 }}  
+
+
             zoom={6}
             nasaData={nasaData} 
         />
+        <Nav />
     </div>
   );
 
