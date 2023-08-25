@@ -2,7 +2,7 @@
 ## Description
 This is a natural events tracker map using the data and coordinates gathered on wildfire events in the United States from the NASA EONET (Earth Observatory Natural Event Tracker). 
 
-## Link [Netlify](https://naturaleventstracker-reactapp.netlify.app)
+## Link [Netlify](https://natural-event-tracker-react-app.netlify.app/)
 
 ## Installation
 A Google Maps API key will be required. The NASA EONET API only require you to register for a log in but do not require an API key.
