@@ -13,7 +13,7 @@ Dependencies
 <ul>
 <li>iconify/icons-mdi": "^1.2.47</li>
 <li>react-google-maps/api": "^2.19.2</li>
-<ul>
+</ul>
 
 ## Challenges and Continued Updates
 <ul>
