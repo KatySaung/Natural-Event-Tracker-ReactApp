@@ -32,8 +32,8 @@ console.log(nasaData);
       <DataDisplay nasaData={{nasaData}} />
       <Map  
             // Washington
-            // center={{lat: 47.54, lng: 
-            //   -117.7311 }} 
+            center={{lat: 47.54, lng: 
+              -117.7311 }} 
 
             // Oregon
             // center={{lat: 42.5158, lng: 
